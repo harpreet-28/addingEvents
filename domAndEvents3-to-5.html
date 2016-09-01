@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dom and Events 3 - 5</title>
+</head>
+
+<body>
+    <h1 id="h1">This is heading One</h1>
+    <h2 id="h2">This is heading Two</h2>
+    <p id="par">What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <input type="button" id="hideBtn" value="Click to Hide." ;>
+    <input type="button" id="showBtn" value="Click to Show.">
+    <ul id="list">
+        <li>List One</li>
+        <li>List Two</li>
+        <li>List Three</li>
+    </ul>
+    <input type="button" id="shList" value="Hide the List">
+  
+    <script>
+    var _id = function _id(id) {
+        return document['getElementById'](id);
+    }
+    var h1 = _id('h1');
+    var h2 = _id('h2');
+    var par = _id('par');
+    var hideBtn = _id('hideBtn');
+    var showBtn = _id('showBtn');
+    var ul = _id('list');
+    var shList = _id('shList');
+
+    function hideAll() {
+        h1['style']['visibility'] = "hidden";
+        h2['style']['visibility'] = "hidden";
+        par['style']['visibility'] = "hidden";
+    }
+    hideBtn['addEventListener']('click', hideAll, false);
+
+
+    function showAll() {
+        h1['style']['visibility'] = "visible";
+        h2['style']['visibility'] = "visible";
+        par['style']['visibility'] = "visible";
+    }
+    showBtn['addEventListener']('dblclick', showAll, false);
+
+    function hideList(){
+        ul['style']['visibility']= "hidden";
+    }
+
+    shList['addEventListener']('mouseover', hideList, false);
+
+    function showList(){
+        ul['style']['visibility']= "visible";
+    }
+
+    shList['addEventListener']('mouseout', showList, false);
+
+    </script>
+</body>
+
+</html>
